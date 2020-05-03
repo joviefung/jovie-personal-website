@@ -1,0 +1,120 @@
+@import '~@angular/material/theming';
+
+@mixin experience-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  
+  .timeline {
+    position: relative;
+    margin: 0 auto;
+    &::after {
+      content: '';
+      position: absolute;
+      width: 6px;
+      top: 0;
+      bottom: 0;
+      left: 50%;
+      margin-left: -3px;
+      background-color: mat-color($primary);
+    }
+    .container {
+      position: relative;
+      background-color: inherit;
+      width: calc(50% - 40px);
+      &::before {
+        content: '';
+        position: absolute;
+        z-index: 1;
+        height: 0;
+        width: 0;
+        top: 22px;
+        border: medium solid mat-color($primary);
+      }
+      &::after {
+        content: '';
+        position: absolute;
+        width: 18px;
+        height: 18px;
+        border: 4px solid mat-color($primary);
+        background-color: mat-color($accent);
+        top: 15px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+      &.left {
+        padding: 10px 40px 10px 0px;
+        left: 0;
+        &::before {
+          right: 30px;
+          border-width: 10px 0 10px 10px;
+          border-color: transparent transparent transparent mat-color($primary, 100);
+        }
+        &::after {
+          right: -13px;
+        }
+      }
+      &.right {
+        left: 50%;
+        padding: 10px 0px 10px 40px;
+        &::before {
+          left: 30px;
+          border-width: 10px 10px 10px 0;
+          border-color: transparent mat-color($primary, 100) transparent transparent;
+        }
+        &::after {
+          left: -13px;
+        }
+      }
+      .timeline-content {
+        padding: 20px 30px;
+        background-color: mat-color($primary, 100);
+        position: relative;
+        border-radius: 6px;
+        .timeline-title {
+          display: flex;
+          align-items: center;
+          padding-bottom: 16px;
+          .timeline-title-logo {
+            max-height: 28px;
+          }
+          .timeline-title-text {
+            padding-left: 16px;
+            margin: 0;
+          }
+          .timeline-title-period {
+            margin: 0;
+          }
+        }
+        .timeline-actions {
+          display: flex;
+        }
+      }
+    }
+    @media screen and (max-width: 600px) {
+      .timeline {
+        &::after {
+          left: 31px;
+        }
+        .container {
+          width: 100%;
+          padding-left: 70px;
+          padding-right: 25px;
+          &::before {
+            left: 60px;
+            border: medium solid mat-color($primary, 100);
+            border-width: 10px 10px 10px 0;
+            border-color: transparent mat-color($primary, 100) transparent transparent;
+          }
+          &.left::after, .right::after {
+            left: 15px;
+          }
+          &.right {
+            left: 0%;
+          }
+        }
+      }
+    }
+  }
+}
+
+

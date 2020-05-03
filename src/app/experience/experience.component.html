@@ -1,0 +1,28 @@
+<app-section heading="Experience">
+  <div class="content">
+    <div class="timeline">
+      <div 
+        *ngFor="let timelineEvent of timelineEvents; let i = index"
+        [class.left]="i % 2 === 0"
+        [class.right]="i % 2 === 1"
+        [style.height.px]="timelineEvent.periodByMonths() * 12"
+        [style.minHeight.px]="timelineContent.offsetHeight"
+        class="container"
+      >
+        <div class="timeline-content" #timelineContent>
+          <div class="timeline-title">
+            <img class="timeline-title-logo" [src]="timelineEvent.logo" />
+            <div class="timeline-title-text mat-title">{{timelineEvent.employer}}</div>
+            <div class="spacer"></div>
+            <div class="timeline-title-period mat-title">{{timelineEvent.displayStartDate()}} - {{timelineEvent.displayEndDate()}}</div>
+          </div>
+          <div class="timeline-actions">
+            <div class="mat-subheading-2">{{timelineEvent.title}}</div>
+            <div class="spacer"></div>
+            <button mat-flat-button color="accent" (click)="openDialog(timelineEvent)">Details</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</app-section>

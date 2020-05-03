@@ -1,0 +1,29 @@
+@import '~@angular/material/theming';
+
+@mixin jumbotron-theme($theme) {
+  $primary: map-get($theme, primary);
+  $accent: map-get($theme, accent);
+  
+  .jumbotron-container {
+    height: 500px;
+    background-color: mat-color($primary, A100);
+    .jumbotron-heading {
+      height: 100%;
+      padding-left: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      flex-direction: column;
+      color: white;
+      .title {
+        margin-bottom: 12px;
+      }
+      .button {
+        margin: 12px 0;
+      }
+      .contacts {
+        margin-left: -8px;
+      }
+    }
+  }
+}

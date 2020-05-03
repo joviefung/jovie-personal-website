@@ -1,0 +1,21 @@
+<mat-toolbar color="primary" class="toolbar mat-elevation-z6">
+  <div matRipple class="toolbar-title" (click)="top.click()">
+    <img class="toolbar-title-logo" src="../../assets/logo.png" />
+    <span class="toolbar-title-text">Jovie</span>
+  </div>
+  <a #top routerLink='.' fragment="top"></a>
+  <a mat-button routerLink='.' fragment="about-me">About me</a>
+  <a mat-button routerLink='.' fragment="skills">Skills</a>
+  <a mat-button routerLink='.' fragment="experience">Experience</a>
+  <a mat-button routerLink='.' fragment="works">Works</a>
+  <div class="spacer"></div>
+  <app-contacts></app-contacts>
+  <a mat-flat-button color="accent" href="../../assets/Jovie Fung CV.pdf" download="Jovie Fung CV.pdf">My CV</a>
+</mat-toolbar>
+<section class="section">
+  <app-jumbotron id="top"></app-jumbotron>
+  <app-about-me id="about-me"></app-about-me>
+  <app-skills id="skills"></app-skills>
+  <app-experience id="experience"></app-experience>
+  <app-works id="works"></app-works>
+</section>

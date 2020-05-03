@@ -1,0 +1,30 @@
+<div mat-dialog-title class="dialog-title">
+  <img class="dialog-title-logo" [src]="timelineEvent.logo" />
+  <div class="dialog-title-text">{{timelineEvent.title}}</div>
+</div>
+<div mat-dialog-content>
+  <div *ngIf="timelineEvent.website" class="dialog-content">
+    <mat-icon>link</mat-icon>
+    <a [href]="timelineEvent.website" class="dialog-content-text mat-body-1" target="_blank">{{timelineEvent.website}}</a>
+  </div>
+  <div *ngIf="timelineEvent.type" class="dialog-content">
+    <mat-icon>description</mat-icon>
+    <div class="dialog-content-text mat-body-1">{{timelineEvent.type}}</div>
+  </div>
+  <div *ngIf="timelineEvent.teamSize" class="dialog-content">
+    <mat-icon>people</mat-icon>
+    <div class="dialog-content-text mat-body-1">{{timelineEvent.teamSize}}</div>
+  </div>
+  <div *ngIf="timelineEvent.works.length" class="dialog-content">
+    <mat-icon>work</mat-icon>
+    <div>
+      <div *ngFor="let work of timelineEvent.works" class="dialog-content-text mat-body-1">{{work}}</div>
+    </div>
+  </div>
+  <div *ngIf="timelineEvent.screenshots.length" class="dialog-content">
+    <div>
+      <mat-icon>web</mat-icon>
+      <img *ngFor="let screenshot of timelineEvent.screenshots" [src]="screenshot" class="dialog-content-screenshot" />
+    </div>
+  </div>
+</div>

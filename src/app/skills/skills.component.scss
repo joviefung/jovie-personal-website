@@ -1,0 +1,35 @@
+.content {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 840px;
+  margin: auto;
+  .skill-block {
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 50%;
+    max-width: 50%;
+    margin: 12px 0;
+    ::ng-deep .mat-figure {
+      justify-content: flex-start;
+      align-items: flex-start;
+    }
+    .subheading {
+      margin: 12px 48px;
+    }
+    .skill-container {
+      display: flex;
+      align-items: center;
+      margin: 16px 0;
+      .icon {
+        max-height: 32px;
+        max-width: 32px;
+        width: 32px;
+        margin-right: 16px;
+      }
+      .text {
+        margin: 0;
+      }
+    }
+  }
+
+}
