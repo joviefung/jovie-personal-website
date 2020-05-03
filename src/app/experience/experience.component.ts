@@ -11,7 +11,7 @@ import { TimelineEventDetailsDialogComponent } from '../timeline-event-details-d
 export class ExperienceComponent implements OnInit {
   timelineEvents: TimelineEvent[] = [
     new TimelineEvent({
-      logo: '../../assets/snagr.png',
+      logo: './assets/snagr.png',
       employer: 'SnagR',
       title: 'Front-end web developer',
       type: 'Full time',
@@ -27,13 +27,13 @@ export class ExperienceComponent implements OnInit {
         'Periodic reports using Azure Logic App'
       ],
       screenshots: [
-        '../../assets/snagrScreenshots1.png',
-        '../../assets/snagrScreenshots2.png',
-        '../../assets/snagrScreenshots3.png'
+        './assets/snagrScreenshots1.png',
+        './assets/snagrScreenshots2.png',
+        './assets/snagrScreenshots3.png'
       ]
     }),
     new TimelineEvent({
-      logo: '../../assets/anase.jpg',
+      logo: 'assets/anase.jpg',
       employer: 'Anase',
       title: 'Front-end web developer',
       type: 'Freelance',
@@ -46,7 +46,7 @@ export class ExperienceComponent implements OnInit {
       ]
     }),
     new TimelineEvent({
-      logo: '../../assets/ibm.svg',
+      logo: './assets/ibm.svg',
       employer: 'IBM Hong Kong Computer Development Lab',
       title: 'Software developer / Quality assurance(QA)',
       type: 'Full time(Permanent)',
@@ -68,7 +68,7 @@ export class ExperienceComponent implements OnInit {
       ]
     }),
     new TimelineEvent({
-      logo: '../../assets/ibm.svg',
+      logo: './assets/ibm.svg',
       employer: 'IBM Hong Kong Computer Development Lab',
       title: 'Quality assurance(QA)',
       type: 'Internship',
@@ -83,7 +83,7 @@ export class ExperienceComponent implements OnInit {
       ]
     }),
     new TimelineEvent({
-      logo: '../../assets/hkust.png',
+      logo: './assets/hkust.png',
       employer: 'Hong Kong University of Science and Technology',
       title: 'Computer laboratory tutor helper',
       type: 'Part time',

@@ -16,15 +16,15 @@ export class AppComponent {
   ){
     this.matIconRegistry.addSvgIcon(
       'linkedIn',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/linkedIn.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/linkedIn.svg')
     );
     this.matIconRegistry.addSvgIcon(
       'angelList',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/angelList.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/angelList.svg')
     );
     this.matIconRegistry.addSvgIcon(
       'github',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/github.svg')
+      this.domSanitizer.bypassSecurityTrustResourceUrl('./assets/github.svg')
     );
   }
 }

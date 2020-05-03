@@ -12,15 +12,15 @@ export class SkillsComponent implements OnInit {
       heading: 'Javascript framework',
       skills: [
         {
-          icon: '../../assets/vue.png',
+          icon: './assets/vue.png',
           title: 'Vue.js'
         },
         {
-          icon: '../../assets/angular.svg',
+          icon: './assets/angular.svg',
           title: 'Angular'
         },
         {
-          icon: '../../assets/reactNative.svg',
+          icon: './assets/reactNative.svg',
           title: 'React Native'
         },
       ]
@@ -29,15 +29,15 @@ export class SkillsComponent implements OnInit {
       heading: 'Cloud service',
       skills: [
         {
-          icon: '../../assets/azureFunctions.svg',
+          icon: './assets/azureFunctions.svg',
           title: 'Microsoft Azure Functions'
         },
         {
-          icon: '../../assets/azureLogicApps.svg',
+          icon: './assets/azureLogicApps.svg',
           title: 'Microsoft Azure Logic Apps'
         },
         {
-          icon: '../../assets/azureDevOps.png',
+          icon: './assets/azureDevOps.png',
           title: 'Microsoft Azure DevOps'
         },
       ]
@@ -46,11 +46,11 @@ export class SkillsComponent implements OnInit {
       heading: 'Testing',
       skills: [
         {
-          icon: '../../assets/seleniumWebDriver.png',
+          icon: './assets/seleniumWebDriver.png',
           title: 'Selenium WebDriver'
         },
         {
-          icon: '../../assets/cucumberJS.svg',
+          icon: './assets/cucumberJS.svg',
           title: 'Cucumber.js'
         },
       ]
@@ -59,7 +59,7 @@ export class SkillsComponent implements OnInit {
       heading: 'UX/UI design',
       skills: [
         {
-          icon: '../../assets/materialDesign.png',
+          icon: './assets/materialDesign.png',
           title: 'Material design'
         },
       ]
@@ -68,7 +68,7 @@ export class SkillsComponent implements OnInit {
       heading: 'Email service',
       skills: [
         {
-          icon: '../../assets/amazonSes.jpg',
+          icon: './assets/amazonSes.jpg',
           title: 'Amazon SES (Simple Email Service)'
         },
       ]
