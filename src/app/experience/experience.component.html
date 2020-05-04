@@ -17,9 +17,9 @@
             <div class="timeline-title-period mat-title">{{timelineEvent.displayStartDate()}} - {{timelineEvent.displayEndDate()}}</div>
           </div>
           <div class="timeline-actions">
-            <div class="mat-subheading-2">{{timelineEvent.title}}</div>
+            <div class="mat-subheading-2 timeline-actions-title">{{timelineEvent.title}}</div>
             <div class="spacer"></div>
-            <button mat-flat-button color="accent" (click)="openDialog(timelineEvent)">Details</button>
+            <button class="timeline-actions-button" mat-flat-button color="accent" (click)="openDialog(timelineEvent)">Details</button>
           </div>
         </div>
       </div>

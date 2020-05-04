@@ -73,6 +73,7 @@
           border-width: 10px 10px 10px 0;
           border-color: transparent mat-color($primary, 100) transparent transparent;
           @media (max-width: 799px) {
+            left: unset;
             right: 30px;
             border-width: 10px 0 10px 10px;
             border-color: transparent transparent transparent mat-color($primary, 100);
@@ -93,21 +94,31 @@
         border-radius: 6px;
         .timeline-title {
           display: flex;
+          flex-wrap: wrap;
           align-items: center;
           padding-bottom: 16px;
           .timeline-title-logo {
             max-height: 28px;
+            padding: 0px 16px 4px 0px;
           }
           .timeline-title-text {
-            padding-left: 16px;
             margin: 0;
           }
           .timeline-title-period {
             margin: 0;
+            white-space: nowrap;
           }
         }
         .timeline-actions {
           display: flex;
+          align-items: flex-end;
+          .timeline-actions-title {
+            margin: 0;
+          }
+          .timeline-actions-button {
+            height: fit-content;
+            min-width: auto;
+          }
         }
       }
     }

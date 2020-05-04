@@ -1,4 +1,4 @@
-import { Component, AfterViewInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
+import { Component, AfterViewInit, ViewChildren, QueryList, ElementRef, HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TimelineEvent } from '../models/timeline-event';
 import { TimelineEventDetailsDialogComponent } from '../timeline-event-details-dialog/timeline-event-details-dialog.component';
@@ -104,11 +104,18 @@ export class ExperienceComponent implements AfterViewInit {
   timelineContentHeights: Number[] = [];
 
   ngAfterViewInit() {
+    this.update();
+  }
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.update();
+  }
+
+  update() {
     setTimeout(() => {
       this.timelineContentHeights = this.timelineContents.toArray().map(timelineContent => timelineContent.nativeElement.offsetHeight);
     }, 0);
   }
-
   openDialog(timelineEvent: TimelineEvent): void {
     this.dialog.open(TimelineEventDetailsDialogComponent, {
       width: timelineEvent.screenshots.length ? '80%' : '600px',
