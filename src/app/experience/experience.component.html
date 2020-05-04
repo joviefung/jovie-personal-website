@@ -6,7 +6,7 @@
         [class.left]="i % 2 === 0"
         [class.right]="i % 2 === 1"
         [style.height.px]="timelineEvent.periodByMonths() * 12"
-        [style.minHeight.px]="timelineContent.offsetHeight"
+        [style.minHeight.px]="timelineContentHeights[i]"
         class="container"
       >
         <div class="timeline-content" #timelineContent>

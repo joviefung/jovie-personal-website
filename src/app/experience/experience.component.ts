@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, AfterViewInit, ViewChildren, QueryList, ElementRef } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { TimelineEvent } from '../models/timeline-event';
 import { TimelineEventDetailsDialogComponent } from '../timeline-event-details-dialog/timeline-event-details-dialog.component';
@@ -8,7 +8,7 @@ import { TimelineEventDetailsDialogComponent } from '../timeline-event-details-d
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })
-export class ExperienceComponent implements OnInit {
+export class ExperienceComponent implements AfterViewInit {
   timelineEvents: TimelineEvent[] = [
     new TimelineEvent({
       logo: './assets/snagr.png',
@@ -100,7 +100,13 @@ export class ExperienceComponent implements OnInit {
   constructor(public dialog: MatDialog) {
   }
 
-  ngOnInit() {
+  @ViewChildren("timelineContent") timelineContents: QueryList<ElementRef>;
+  timelineContentHeights: Number[] = [];
+
+  ngAfterViewInit() {
+    setTimeout(() => {
+      this.timelineContentHeights = this.timelineContents.toArray().map(timelineContent => timelineContent.nativeElement.offsetHeight);
+    }, 0);
   }
 
   openDialog(timelineEvent: TimelineEvent): void {
