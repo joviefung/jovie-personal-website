@@ -16,11 +16,19 @@
       left: 50%;
       margin-left: -3px;
       background-color: mat-color($primary);
+      @media (max-width: 799px) {
+        left: unset;
+        right: 17px;
+      }
     }
     .container {
       position: relative;
       background-color: inherit;
       width: calc(50% - 40px);
+      @media (max-width: 799px) {
+        width: calc(100% - 72px);
+        margin-left: 12px;
+      }
       &::before {
         content: '';
         position: absolute;
@@ -56,13 +64,26 @@
       &.right {
         left: 50%;
         padding: 10px 0px 10px 40px;
+        @media (max-width: 799px) {
+          left: 0;
+          padding: 10px 40px 10px 0px;
+        }
         &::before {
           left: 30px;
           border-width: 10px 10px 10px 0;
           border-color: transparent mat-color($primary, 100) transparent transparent;
+          @media (max-width: 799px) {
+            right: 30px;
+            border-width: 10px 0 10px 10px;
+            border-color: transparent transparent transparent mat-color($primary, 100);
+          }
         }
         &::after {
           left: -13px;
+          @media (max-width: 799px) {
+            left: unset;
+            right: -13px;
+          }
         }
       }
       .timeline-content {
@@ -87,30 +108,6 @@
         }
         .timeline-actions {
           display: flex;
-        }
-      }
-    }
-    @media screen and (max-width: 600px) {
-      .timeline {
-        &::after {
-          left: 31px;
-        }
-        .container {
-          width: 100%;
-          padding-left: 70px;
-          padding-right: 25px;
-          &::before {
-            left: 60px;
-            border: medium solid mat-color($primary, 100);
-            border-width: 10px 10px 10px 0;
-            border-color: transparent mat-color($primary, 100) transparent transparent;
-          }
-          &.left::after, .right::after {
-            left: 15px;
-          }
-          &.right {
-            left: 0%;
-          }
         }
       }
     }

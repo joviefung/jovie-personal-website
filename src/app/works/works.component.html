@@ -1,8 +1,8 @@
 <app-section heading="Works">
   <div class="content">
-    <mat-grid-list cols="2" rowHeight="600px">
-      <mat-grid-tile *ngFor="let work of works">
-        <mat-card class="work-card">
+    <div class="work-container">
+      <div class="work-card" *ngFor="let work of works">
+        <mat-card>
           <img mat-card-image [src]="work.screenshot" />
           <mat-card-title>{{work.title}}</mat-card-title>
           <mat-card-subtitle>{{work.framework}}</mat-card-subtitle>
@@ -15,7 +15,7 @@
             </a>
           </mat-card-actions>
         </mat-card>
-      </mat-grid-tile>
-    </mat-grid-list>
+      </div>
+    </div>
   </div>
 </app-section>

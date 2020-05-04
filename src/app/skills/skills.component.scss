@@ -3,12 +3,18 @@
   flex-wrap: wrap;
   max-width: 840px;
   margin: auto;
+  padding: 0 24px;
   .skill-block {
     display: flex;
     flex-direction: column;
     flex: 0 0 50%;
     max-width: 50%;
     margin: 12px 0;
+    @media (max-width: 599px) {
+      flex: 0 0 100%;
+      max-width: 100%;
+      align-items: center;
+    }
     ::ng-deep .mat-figure {
       justify-content: flex-start;
       align-items: flex-start;

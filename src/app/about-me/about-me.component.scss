@@ -19,6 +19,9 @@
   .about-me-content-container {
     margin: 0 auto;
     width: fit-content;
+    @media (max-width: 799px) {
+      padding: 0 24px;
+    }
     .about-me-content {
       display: flex;
       padding: 12px 0;

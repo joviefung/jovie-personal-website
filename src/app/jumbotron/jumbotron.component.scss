@@ -15,6 +15,9 @@
       align-items: flex-start;
       flex-direction: column;
       color: white;
+      @media (max-width: 799px) {
+        padding-left: 50px;
+      }
       .title {
         margin-bottom: 12px;
       }

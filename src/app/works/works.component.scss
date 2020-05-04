@@ -1,3 +1,14 @@
-.work-card {
-  margin: 12px;
+.work-container {
+  display: flex;
+  flex-wrap: wrap;
+  .work-card {
+    display: flex;
+    flex: 0 0 50%;
+    max-width: calc(50% - 48px);
+    margin: 12px 24px;
+    @media (max-width: 799px) {
+      flex: 0 0 100%;
+      max-width: calc(100% - 48px);
+    }
+  }
 }
