@@ -1,7 +1,7 @@
 <app-section heading="Experience">
   <div class="content">
     <div class="timeline">
-      <div 
+      <div
         *ngFor="let timelineEvent of timelineEvents; let i = index"
         [class.left]="i % 2 === 0"
         [class.right]="i % 2 === 1"
@@ -17,7 +17,7 @@
             <div class="timeline-title-period mat-title">{{timelineEvent.displayStartDate()}} - {{timelineEvent.displayEndDate()}}</div>
           </div>
           <div class="timeline-actions">
-            <div class="mat-subheading-2 timeline-actions-title">{{timelineEvent.title}}</div>
+            <div class="mat-subtitle-2 timeline-actions-title">{{timelineEvent.title}}</div>
             <div class="spacer"></div>
             <button class="timeline-actions-button" mat-flat-button color="accent" (click)="openDialog(timelineEvent)">Details</button>
           </div>

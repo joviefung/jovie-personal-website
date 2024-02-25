@@ -1,4 +1,4 @@
-@import './custom-theme';
+@use './custom-theme';
 
 html {
   height: 100%;
@@ -7,11 +7,13 @@ html {
 body {
   height: 100%;
   margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
 }
 a {
   color: inherit;
   text-decoration: inherit;
 }
+
 .spacer {
   flex: 1 1 auto;
 }

@@ -1,11 +1,12 @@
 import { Component, OnInit } from '@angular/core';
-import { SkillBlock } from '../models/skill-block';
+import { SkillBlock } from '../../models/skill-block';
 
 @Component({
   selector: 'app-skills',
   templateUrl: './skills.component.html',
-  styleUrls: ['./skills.component.scss']
+  styleUrl: './skills.component.scss',
 })
+
 export class SkillsComponent implements OnInit {
   skillBlocks: SkillBlock[] = [
     {
@@ -75,9 +76,8 @@ export class SkillsComponent implements OnInit {
     },
   ]
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

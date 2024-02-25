@@ -2,7 +2,7 @@
   <img class="dialog-title-logo" [src]="timelineEvent.logo" />
   <div class="dialog-title-text">{{timelineEvent.title}}</div>
 </div>
-<div mat-dialog-content>
+<mat-dialog-content>
   <div *ngIf="timelineEvent.website" class="dialog-content">
     <mat-icon>link</mat-icon>
     <a [href]="timelineEvent.website" class="dialog-content-text mat-body-1" target="_blank">{{timelineEvent.website}}</a>
@@ -27,4 +27,4 @@
       <img *ngFor="let screenshot of timelineEvent.screenshots" [src]="screenshot" class="dialog-content-screenshot" />
     </div>
   </div>
-</div>
+</mat-dialog-content>

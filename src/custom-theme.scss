@@ -1,14 +1,14 @@
-@import '~@angular/material/theming';
-@import './app/layout/layout.component.scss';
-@import './app/jumbotron/jumbotron.component.scss';
-@import './app/section/section.component.scss';
-@import './app/about-me/about-me.component.scss';
-@import './app/experience/experience.component.scss';
-@import './app/timeline-event-details-dialog/timeline-event-details-dialog.component.scss';
+@use "@angular/material" as mat;
+@include mat.core();
 
-@include mat-core();
+// @import './app/layout/layout.component.scss';
+// @import './app/jumbotron/jumbotron.component.scss';
+// @import './app/section/section.component.scss';
+// @import './app/about-me/about-me.component.scss';
+// @import './app/experience/experience.component.scss';
+// @import './app/timeline-event-details-dialog/timeline-event-details-dialog.component.scss';
 
-$mat-brown-grey: (
+$my-brown-grey: (
   50: #e8e7e6,
   100: #c5c2c1,
   200: #9f9a98,
@@ -24,47 +24,59 @@ $mat-brown-grey: (
   A400: #392f2b,
   A700: #1a0d07,
   contrast: (
-    50: $dark-primary-text,
-    100: $dark-primary-text,
-    200: $dark-primary-text,
-    300: $light-primary-text,
-    400: $light-primary-text,
-    500: $light-primary-text,
-    600: $light-primary-text,
-    700: $light-primary-text,
-    800: $light-primary-text,
-    900: $light-primary-text,
-    A100: $dark-primary-text,
-    A200: $light-primary-text,
-    A400: $light-primary-text,
-    A700: $light-primary-text,
+    50: #312724,
+    100: #312724,
+    200: #312724,
+    300: #c5c2c1,
+    400: #c5c2c1,
+    500: #c5c2c1,
+    600: #c5c2c1,
+    700: #c5c2c1,
+    800: #c5c2c1,
+    900: #c5c2c1,
+    A100: #312724,
+    A200: #c5c2c1,
+    A400: #c5c2c1,
+    A700: #c5c2c1,
   )
 );
 
-$light-primary: mat-palette($mat-brown-grey);
-$light-accent:  mat-palette($mat-yellow, 600);
-$light-warn:    mat-palette($mat-red);
-$light-theme:   mat-light-theme($light-primary, $light-accent, $light-warn);
+$light-primary: mat.define-palette($my-brown-grey);
+$light-accent:  mat.define-palette(mat.$yellow-palette, 600);
+$light-warn:    mat.define-palette(mat.$red-palette);
+$light-typography: mat.define-typography-config();
+$light-theme:   mat.define-light-theme((
+  color: (
+    primary: $light-primary,
+    accent: $light-accent,
+    warn: $light-warn,
+  ),
+  typography:  $light-typography,
+));
 
-@include angular-material-theme($light-theme);
-@include layout-theme($light-theme);
-@include jumbotron-theme($light-theme);
-@include section-theme($light-theme);
-@include about-me-theme($light-theme);
-@include experience-theme($light-theme);
-@include timeline-event-details-dialog-theme($light-theme);
+@include mat.all-component-themes($light-theme);
+@include mat.typography-hierarchy($light-typography);
 
-$dark-primary: mat-palette($mat-blue-grey);
-$dark-accent:  mat-palette($mat-amber, A200, A100, A400);
-$dark-warn:    mat-palette($mat-deep-orange);
-$dark-theme:   mat-dark-theme($dark-primary, $dark-accent, $dark-warn);
+// @include angular-material-theme($light-theme);
+// @include layout-theme($light-theme);
+// @include jumbotron-theme($light-theme);
+// @include section-theme($light-theme);
+// @include about-me-theme($light-theme);
+// @include experience-theme($light-theme);
+// @include timeline-event-details-dialog-theme($light-theme);
 
-.dark {
-  @include angular-material-theme($dark-theme);
-  @include layout-theme($dark-theme);
-  @include jumbotron-theme($dark-theme);
-  @include section-theme($dark-theme);
-  @include about-me-theme($dark-theme);
-  @include experience-theme($dark-theme);
-  @include timeline-event-details-dialog-theme($dark-theme);
-}
+// $dark-primary: mat.define-palette($mat-blue-grey);
+// $dark-accent:  mat.define-palette($mat-amber, A200, A100, A400);
+// $dark-warn:    mat.define-palette($mat-deep-orange);
+// $dark-theme:   mar.define-dark-theme($dark-primary, $dark-accent, $dark-warn);
+
+// .dark {
+//   @include angular-material-theme($dark-theme);
+//   @include layout-theme($dark-theme);
+//   @include jumbotron-theme($dark-theme);
+//   @include section-theme($dark-theme);
+//   @include about-me-theme($dark-theme);
+//   @include experience-theme($dark-theme);
+//   @include timeline-event-details-dialog-theme($dark-theme);
+// }
+

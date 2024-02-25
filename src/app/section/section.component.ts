@@ -5,12 +5,12 @@ import { Component, OnInit, Input } from '@angular/core';
   templateUrl: './section.component.html',
   styleUrls: ['./section.component.scss']
 })
+
 export class SectionComponent implements OnInit {
   @Input() heading: string;
 
-  constructor() { }
+  constructor() {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
 }

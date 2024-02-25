@@ -1,45 +1,46 @@
-@import '~@angular/material/theming';
+@use "@angular/material" as mat;
+@use "../../custom-theme.scss" as theme;
 
-@mixin layout-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  
-  .toolbar {
-    position: fixed;
-    top: 0;
-    z-index: 10;
-    .toolbar-title {
-      display: flex;
-      align-items: center;
-      height: 100%;
-      cursor: pointer;
-      margin-right: 48px;
-      @media (max-width: 799px) {
-        display: none;
-      }
-      .toolbar-title-logo {
-        height: 40px;
-        border-radius: 50%;
-        margin-left: 16px;
-      }
-      .toolbar-title-text {
-        padding-left: 16px;
-        padding-right: 24px;
-      }
+.toolbar {
+  position: fixed;
+  top: 0;
+  z-index: 10;
+
+  .toolbar-title {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    cursor: pointer;
+    margin-right: 48px;
+    @media (max-width: 799px) {
+      display: none;
     }
-    .toolbar-link-button {
-      @media (max-width: 799px) {
-        display: none;
-      }
+
+    .toolbar-title-logo {
+      height: 40px;
+      border-radius: 50%;
+      margin-left: 16px;
+    }
+
+    .toolbar-title-text {
+      padding-left: 16px;
+      padding-right: 24px;
     }
   }
-  .section {
-    padding-top: 64px;
+
+  .toolbar-link-button {
     @media (max-width: 799px) {
-      padding-top: 56px;
+      display: none;
     }
-    > :nth-child(odd) {
-      background-color: mat-color($primary, 50);
-    }
+  }
+}
+
+.section {
+  padding-top: 64px;
+  @media (max-width: 799px) {
+    padding-top: 56px;
+  }
+  > :nth-child(odd) {
+    background-color: mat.get-theme-color(theme.$light-theme, primary, 50);
   }
 }

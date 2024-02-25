@@ -7,6 +7,7 @@ import { DomSanitizer } from "@angular/platform-browser";
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
+
 export class AppComponent {
   title = 'jovie-fung-website';
 

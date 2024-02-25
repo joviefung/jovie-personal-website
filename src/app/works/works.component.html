@@ -1,11 +1,13 @@
 <app-section heading="Works">
   <div class="content">
-    <div class="work-container">
-      <div class="work-card" *ngFor="let work of works">
-        <mat-card>
+    <mat-grid-list [cols]="numberOfColumns" [gutterSize]="'36px'">
+      <mat-grid-tile *ngFor="let work of works">
+        <mat-card class="work-card">
           <img mat-card-image [src]="work.screenshot" />
-          <mat-card-title>{{work.title}}</mat-card-title>
-          <mat-card-subtitle>{{work.framework}}</mat-card-subtitle>
+          <mat-card-header>
+            <mat-card-title>{{work.title}}</mat-card-title>
+            <mat-card-subtitle>{{work.framework}}</mat-card-subtitle>
+          </mat-card-header>
           <mat-card-actions>
             <a *ngIf="work.link" mat-icon-button [href]="work.link" target="_blank">
               <mat-icon>link</mat-icon>
@@ -15,7 +17,7 @@
             </a>
           </mat-card-actions>
         </mat-card>
-      </div>
-    </div>
+      </mat-grid-tile>
+    </mat-grid-list>
   </div>
 </app-section>

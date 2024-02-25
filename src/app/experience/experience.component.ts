@@ -1,6 +1,6 @@
 import { Component, AfterViewInit, ViewChildren, QueryList, ElementRef, HostListener } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
-import { TimelineEvent } from '../models/timeline-event';
+import { TimelineEvent } from '../../models/timeline-event';
 import { TimelineEventDetailsDialogComponent } from '../timeline-event-details-dialog/timeline-event-details-dialog.component';
 
 @Component({
@@ -8,6 +8,7 @@ import { TimelineEventDetailsDialogComponent } from '../timeline-event-details-d
   templateUrl: './experience.component.html',
   styleUrls: ['./experience.component.scss']
 })
+
 export class ExperienceComponent implements AfterViewInit {
   timelineEvents: TimelineEvent[] = [
     new TimelineEvent({
@@ -17,13 +18,13 @@ export class ExperienceComponent implements AfterViewInit {
       type: 'Full time',
       startDate: new Date(2017, 11),
       endDate: new Date(),
-      website: 'https://www.snagr.co.uk/',
+      website: 'https://rdrive.io/',
       teamSize: 6,
       works: [
         'SnagR version 5 web application using Vue.js, Vuex and Vuetify',
         'UX/UI design for Snagr version 5 web application',
-        'Web application CD/CI using Azure DevOps', 
-        'Email notifications using Azure Function in C# and Amazon SES', 
+        'Web application CD/CI using Azure DevOps',
+        'Email notifications using Azure Function in C# and Amazon SES',
         'Periodic reports using Azure Logic App'
       ],
       screenshots: [
@@ -106,8 +107,9 @@ export class ExperienceComponent implements AfterViewInit {
   ngAfterViewInit() {
     this.update();
   }
+
   @HostListener('window:resize', ['$event'])
-  onResize(event) {
+  onResize() {
     this.update();
   }
 
@@ -116,6 +118,7 @@ export class ExperienceComponent implements AfterViewInit {
       this.timelineContentHeights = this.timelineContents.toArray().map(timelineContent => timelineContent.nativeElement.offsetHeight);
     }, 0);
   }
+
   openDialog(timelineEvent: TimelineEvent): void {
     this.dialog.open(TimelineEventDetailsDialogComponent, {
       width: timelineEvent.screenshots.length ? '80%' : '600px',

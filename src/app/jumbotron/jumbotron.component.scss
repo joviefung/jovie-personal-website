@@ -1,32 +1,32 @@
-@import '~@angular/material/theming';
+@use '@angular/material' as mat;
+@use "../../custom-theme.scss" as theme;
 
-@mixin jumbotron-theme($theme) {
-  $primary: map-get($theme, primary);
-  $accent: map-get($theme, accent);
-  
-  .jumbotron-container {
-    height: 500px;
-    background-color: mat-color($primary, A100);
-    .jumbotron-heading {
-      height: 100%;
-      padding-left: 200px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      flex-direction: column;
-      color: white;
-      @media (max-width: 799px) {
-        padding-left: 50px;
-      }
-      .title {
-        margin-bottom: 12px;
-      }
-      .button {
-        margin: 12px 0;
-      }
-      .contacts {
-        margin-left: -8px;
-      }
+.jumbotron-container {
+  height: 500px;
+  background-color: mat.get-theme-color(theme.$light-theme, primary, A100);
+  background-image: url("../../assets/background.png");
+  background-repeat: repeat;
+  background-size: 300px 300px;
+
+  .jumbotron-heading {
+    height: 100%;
+    padding-left: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    color: white;
+    @media (max-width: 799px) {
+      padding-left: 50px;
+    }
+    .title {
+      margin-bottom: 12px;
+    }
+    .button {
+      margin: 12px 0;
+    }
+    .contacts {
+      margin-left: -8px;
     }
   }
 }
